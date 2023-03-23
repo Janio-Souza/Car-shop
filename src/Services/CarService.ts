@@ -18,6 +18,12 @@ class CarService {
     // Retornar os dados com o id
     return this.creatCarDomain(newCar);
   }
+
+  public async findAll() {
+    const carODM = new CarODM();
+    const allCars = await carODM.findAll();
+    return allCars;
+  }
 }
 
 export default CarService;
