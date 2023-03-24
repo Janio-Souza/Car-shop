@@ -41,6 +41,34 @@ class CarController {
       this.next(error);
     }
   }
+  public async findById() {
+    const { id } = this.req.params;
+
+    try {
+      const car = await this.service.findById(id);
+      return this.res.status(car.status).json(car.message);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+  public async updateCar() {
+    const { id } = this.req.params;
+    const car: ICar = {
+      model: this.req.body.model,
+      year: this.req.body.year,
+      color: this.req.body.color,
+      status: this.req.body.status,
+      buyValue: this.req.body.buyValue,
+      doorsQty: this.req.body.doorsQty,
+      seatsQty: this.req.body.seatsQty,
+    };
+    try {
+      const carUpdatede = await this.service.updateCar(id, car);
+      return this.res.status(carUpdatede.status).json(carUpdatede.message);
+    } catch (error) {
+      this.next(error);
+    } 
+  }
 }
 
 export default CarController;
