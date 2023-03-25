@@ -20,6 +20,16 @@ routes.get(
 );
 
 routes.get(
+  '/motorcycles',
+  (req, res, next) => new MotoController(req, res, next).findAll(),
+);
+
+routes.get(
+  '/motorcycles/:id',
+  (req, res, next) => new MotoController(req, res, next).findById(),
+);
+
+routes.get(
   '/cars/:id',
   (req, res, next) => new CarController(req, res, next).findById(),
 );
