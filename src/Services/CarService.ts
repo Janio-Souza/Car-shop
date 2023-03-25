@@ -22,7 +22,7 @@ class CarService {
     // Criar instância da Model de Payment usando Mongoose
     const carODM = new CarODM();
     // Inserir os dados no banco
-    const newCar = await carODM.creat(car);
+    const newCar = await carODM.create(car);
     // Retornar os dados com o id
     return this.carDomain(newCar);
   }

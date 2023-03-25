@@ -1,11 +1,17 @@
 import { Router } from 'express';
 import CarController from '../Controllers/CarController';
+import MotoController from '../Controllers/motoController';
 
 const routes = Router();
 
 routes.post(
   '/cars',
   (req, res, next) => new CarController(req, res, next).create(),
+);
+
+routes.post(
+  '/motorcycles',
+  (req, res, next) => new MotoController(req, res, next).creatMoto(),
 );
 
 routes.get(
