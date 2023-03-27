@@ -58,6 +58,37 @@ describe('Testa funções de buscar motos', function () {
     
     expect(result).to.be.deep.equal(allMotos);
   });
+
+  it('Deve atualizar uma moto pelo id', async function () {
+    const expectedValue = new Motorcycle({
+      id: '6420f2e43f634aa93f42d9bf',
+      model: 'Honda Fan 160 Esd',
+      year: 2019,
+      color: 'Prata',
+      status: true,
+      buyValue: 15000,
+      category: 'Cyti',
+      engineCapacity: 160,
+    });
+
+    const update = {
+      model: 'Honda Fan 160 Esd',
+      year: 2019,
+      color: 'Prata',
+      status: true,
+      buyValue: 15000,
+      category: 'Cyti',
+      engineCapacity: 160,
+    };
+  
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(expectedValue);
+
+    const service = new MotorcyclesService();
+    const result = await service.updateMoto('6420f2e43f634aa93f42d9bf', update);
+
+    expect(result.status).to.be.equal(200);
+    expect(result.message).to.be.deep.equal(expectedValue);
+  });
   afterEach(function () {
     sinon.restore();
   });

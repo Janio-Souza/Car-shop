@@ -32,6 +32,17 @@ class MotorcyclesService {
       return { status: 422, message: { message: 'Invalid mongo id' } };
     }
   }
+
+  public async updateMoto(id: string, motoUpdate: IMotorcycle) {
+    try {
+      const motocycleODM = new MotorcyclesODM();
+      const moto = await motocycleODM.updateMoto(id, motoUpdate);
+      if (moto === null) return { status: 404, message: { message: 'Motorcycle not found' } };
+      return { status: 200, message: this.motoDomain(moto) };
+    } catch (err) {
+      return { status: 422, message: { message: 'Invalid mongo id' } };
+    }
+  }
 }
 
 export default MotorcyclesService;
