@@ -56,13 +56,13 @@ C. Serão iniciados os dois containers:
 
 D. Utilizar a extensão do VScode 'Thunder Client' para acessar as rotas:
 
-  <p>http://localhost:3001/cars</p>
+    <p>http://localhost:3001/cars</p>
   
-  <p>http://localhost:3001/cars/:id</p>
+    <p>http://localhost:3001/cars/:id</p>
   
-  <p>http://localhost:3001/motorcycles</p>
+    <p>http://localhost:3001/motorcycles</p>
   
-  <p>http://localhost:3001/motorcycles/:id</p>
+    <p>http://localhost:3001/motorcycles/:id</p>
 
 ## Contribuintes
 |Nome|GitHub|
