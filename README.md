@@ -42,27 +42,35 @@ Aplicação em funcionamento.
 
 Clone o repositório em sua maquina e siga os passos.
 
-1. Entrar no diretório Car-shop:
+Use o comando:
 
-  $ cd Car-shop
+      $ git clone git@github.com:Janio-Souza/Car-shop.git
 
-B. Iniciada pelo Docker através do comando:
+1. Entre no diretório Car-shop:
+
+        $ cd Car-shop
+
+2. Instale as dependencias:
+
+        $ npm install
+
+3. Iniciada pelo Docker através do comando:
   
-  $ docker compose up -d
+        $ docker compose up -d
 
-C. Serão iniciados os dois containers:
+Serão iniciados os dois containers:
   1. container docker car_shop_db, com o banco de dados mongo;
   2. container docker car_shop, com o backend em Node.js;
 
-D. Utilizar a extensão do VScode 'Thunder Client' para acessar as rotas:
+4. Utilize a extensão do VScode 'Thunder Client', ou qualquer outra aplicação de cliente API de sua preferencia para acessar as rotas:
 
-    http://localhost:3001/cars
+        http://localhost:3001/cars
   
-    http://localhost:3001/cars/:id
+        http://localhost:3001/cars/:id
   
-    http://localhost:3001/motorcycles
+        http://localhost:3001/motorcycles
   
-    http://localhost:3001/motorcycles/:id
+        http://localhost:3001/motorcycles/:id
 
 ## Contribuintes
 |Nome|GitHub|
